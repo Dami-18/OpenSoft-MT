@@ -1,2 +1,2 @@
 # OpenSoft-MT
-Basic authentication system in Go
+basic authentication system in Go
