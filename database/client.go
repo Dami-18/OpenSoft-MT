@@ -7,11 +7,11 @@ import (
 	"gorm.io/gorm"
 )
 
-var dbInstance *gorm.DB
+var Instance *gorm.DB // Instance will be globally imported, so don't change name
 var dbError error
 
 func ConnectDb(connectionString string){
-	dbInstance, dbError = gorm.Open(mysql.Open(connectionString), &gorm.Config{})
+	Instance, dbError = gorm.Open(mysql.Open(connectionString), &gorm.Config{})
 
 	if dbError != nil{
 		log.Fatal(dbError)
@@ -21,7 +21,7 @@ func ConnectDb(connectionString string){
 }
 
 func Migrate(){
-	dbInstance.AutoMigrate(&models.User{})
+	Instance.AutoMigrate(&models.User{})
 	log.Println("Database migration complete!")
 }
 
