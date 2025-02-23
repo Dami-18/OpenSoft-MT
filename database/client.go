@@ -7,7 +7,7 @@ import (
 	"gorm.io/gorm"
 )
 
-var Instance *gorm.DB // Instance will be globally imported, so don't change name
+var Instance *gorm.DB // Instance will be globally imported along with its methods, so don't change name `Instance`
 var dbError error
 
 func ConnectDb(connectionString string){
