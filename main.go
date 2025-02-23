@@ -28,5 +28,7 @@ func main(){
     database.Migrate()
 
 	router := routes.InitRouter()
-	router.Run(":8080")
+	port := os.Getenv("PORT")
+	portNum := fmt.Sprintf(":%s",port)
+	router.Run(portNum)
 }
