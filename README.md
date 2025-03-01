@@ -29,7 +29,7 @@ bash init_db.sh
 
 Installing go dependencies:
 ```go
-go mod download
+go mod tidy
 ```
 
 Build and run executable:
